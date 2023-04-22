@@ -4,13 +4,13 @@ This module can be used to create a [Target
 Group](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html) and
 [Listener Rules](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html) for
 a Load Balancer created with the [load-balancer 
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/load-balancer). You can use this 
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/load-balancer). You can use this 
 module to configure health checks and routing for Couchbase and Sync Gateway. 
 
 The reason the `load-balancer` and `load-balancer-target-group` modules are separate is that you may wish to create
 multiple target groups for a single load balancer.
 
-See the [examples folder](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples) for fully
+See the [examples folder](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples) for fully
 working sample code.
 
 
@@ -19,12 +19,12 @@ working sample code.
 ## How do you use this module?
 
 Imagine you've deployed Couchbase and Sync Gateway using the [couchbase-cluster
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-cluster) and a Load Balancer
-using the [load-balancer module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/load-balancer):    
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-cluster) and a Load Balancer
+using the [load-balancer module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/load-balancer):    
 
 ```hcl
 module "couchbase" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
   source = "github.com/gruntwork/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
   
   cluster_name = var.cluster_name
@@ -35,7 +35,7 @@ module "couchbase" {
 }
 
 module "load_balancer" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
   source = "github.com/gruntwork/terraform-aws-couchbase//modules/load-balancer?ref=<VERSION>"
   
   name = var.cluster_name
@@ -59,7 +59,7 @@ To create Target Groups and Listener Rules for Couchbase and Sync Gateway, you n
 
 ```hcl
 module "couchbase_target_group" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
   source = "github.com/gruntwork/terraform-aws-couchbase//modules/load-balancer-target-group?ref=<VERSION>"
 
   target_group_name = "${var.cluster_name}-cb"
@@ -79,7 +79,7 @@ module "couchbase_target_group" {
 }
 
 module "sync_gateway_target_group" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
   source = "github.com/gruntwork/terraform-aws-couchbase//modules/load-balancer-target-group?ref=<VERSION>"
   
   target_group_name = "${var.cluster_name}-sg"

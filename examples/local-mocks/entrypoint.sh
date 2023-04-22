@@ -25,7 +25,7 @@ readonly user_data_env_vars=$(env | grep "^USER_DATA_ENV_" | sed 's/^USER_DATA_E
 cat << EOF > /lib/systemd/system/run-user-data.service
 [Unit]
 Description=Mock Run Couchbase Script
-Documentation=https://github.com/gruntwork-io/terraform-aws-couchbase
+Documentation=https://github.com/tnn-gruntwork-io/terraform-aws-couchbase
 After=couchbase-server.service
 
 [Service]

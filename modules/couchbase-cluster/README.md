@@ -5,8 +5,8 @@ This folder contains a [Terraform](https://www.terraform.io/) module to deploy a
 This module can be used to deploy any or all of the Couchbase services (data, search, index, query) or Sync
 Gateway. The idea is to create an [Amazon Machine Image (AMI)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 that has Couchbase and/or Sync Gateway installed using the 
-[install-couchbase-server](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-couchbase-server) and/or
-[install-sync-gateway](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-sync-gateway) 
+[install-couchbase-server](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-couchbase-server) and/or
+[install-sync-gateway](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-sync-gateway) 
 modules.
 
 
@@ -19,8 +19,8 @@ code by adding a `module` configuration and setting its `source` parameter to UR
 
 ```hcl
 module "couchbase_cluster" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
-  source = "github.com/gruntwork-io/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
+  source = "github.com/tnn-gruntwork-io/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
 
   # Specify the ID of the Couchbase AMI. You should build this using the scripts in the install-couchbase-server and/or 
   # install-sync-gateway modules.
@@ -47,20 +47,20 @@ Note the following parameters:
 * `ami_id`: Use this parameter to specify the ID of a Couchbase [Amazon Machine Image 
   (AMI)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) to deploy on each server in the cluster. You
   should install Couchbase and/or Sync Gateway in this AMI using the scripts in the 
-  [install-couchbase-server](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-couchbase-server) and/or
-  [install-sync-gateway](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-sync-gateway)
+  [install-couchbase-server](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-couchbase-server) and/or
+  [install-sync-gateway](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-sync-gateway)
   modules.
   
 * `user_data`: Use this parameter to specify a [User 
   Data](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html#user-data-shell-scripts) script that each
   server will run during boot. This is where you can use the 
-  [run-couchbase-server](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-couchbase-server) and/or
-  [run-sync-gateway](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-sync-gateway)
+  [run-couchbase-server](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-couchbase-server) and/or
+  [run-sync-gateway](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-sync-gateway)
   scripts to configure and run Couchbase and/or Sync Gateway. 
 
 You can find the other parameters in [variables.tf](variables.tf).
 
-Check out the [examples folder](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples) for 
+Check out the [examples folder](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples) for 
 fully-working sample code. 
 
 
@@ -71,7 +71,7 @@ fully-working sample code.
 ### Connecting to Sync Gateway
 
 We recommend deploying a load balancer in front of Sync Gateway using the [load-balancer
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples). If you do that, the module will
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples). If you do that, the module will
 output the DNS name of the load balancer, and you can connect to that URL to connect to the Sync Gateway. 
 
 For replication with Couchbase Lite and other external clients, you should connect to the [REST 
@@ -84,7 +84,7 @@ from localhost, as it provides admin access to everything in the DB!).
 ### Connecting to the Couchbase Server Web Console
 
 We recommend deploying a load balancer in front of your Couchbase Servers using the [load-balancer
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples). If you do that, the module will
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples). If you do that, the module will
 output the DNS name of the load balancer, and you can connect to that URL to connect to access the [Couchbase 
 Web Console](https://developer.couchbase.com/documentation/server/current/admin/ui-intro.html) at the `/ui` path. 
 
@@ -138,8 +138,8 @@ This module runs Couchbase on top of an [Auto Scaling Group (ASG)](https://aws.a
 should run the ASG with multiple Instances spread across multiple [Availability 
 Zones](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html). Each of the EC2
 Instances should be running an AMI that has Couchbase and/or Sync Gateway installed via the 
-[install-couchbase-server](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-couchbase-server) and/or
-[install-sync-gateway](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-sync-gateway) 
+[install-couchbase-server](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-couchbase-server) and/or
+[install-sync-gateway](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/install-sync-gateway) 
 modules. You pass in the ID of the AMI to run using the `ami_id` input parameter.
 
 
@@ -159,8 +159,8 @@ Each EC2 Instance in the ASG has a Security Group that allows minimal connectivi
 * Inbound SSH access from the CIDR blocks and security groups you specify
 
 The Security Group ID is exported as an output variable which you can use with the 
-[couchbase-server-security-group-rules](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-server-security-group-rules) and
-[sync-gateway-security-group-rules](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/sync-gateway-security-group-rules)
+[couchbase-server-security-group-rules](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-server-security-group-rules) and
+[sync-gateway-security-group-rules](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/sync-gateway-security-group-rules)
 modules to open up all the ports necessary for Couchbase and Sync Gateway. 
 
 Check out the [Security section](#security) for more details. 
@@ -230,7 +230,7 @@ The EC2 Instances in the cluster can store their data in one of two locations:
   encryption for the EBS volume.
   
 * The root volume. To encrypt the root volume, you must encrypt your AMI. If you're creating the AMI using Packer 
-  (e.g. as shown in the [couchbase-ami example](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples/couchbase-ami)), 
+  (e.g. as shown in the [couchbase-ami example](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples/couchbase-ami)), 
   you need to set the [encrypt_boot parameter](https://www.packer.io/docs/builders/amazon-ebs.html#encrypt_boot) to 
   `true`.  
 
@@ -250,8 +250,8 @@ This module attaches a security group to each EC2 Instance that allows inbound r
   allowed access.
   
 The ID of the security group is exported as an output variable, which you can use with the 
-[couchbase-server-security-group-rules](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-server-security-group-rules) and
-[sync-gateway-security-group-rules](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/sync-gateway-security-group-rules)
+[couchbase-server-security-group-rules](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-server-security-group-rules) and
+[sync-gateway-security-group-rules](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/sync-gateway-security-group-rules)
 modules to open up all the ports necessary for Couchbase and Sync Gateway.
   
   

@@ -12,10 +12,10 @@ your Couchbase and/or Sync Gateway cluster to:
 
 Note that this module solely deploys the Load Balancer, as you may want to share one load balancer across multiple
 applications. To deploy Target Groups, health checks, and routing rules, use the 
-[load-balancer-target-group](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/load-balancer-target-group)
+[load-balancer-target-group](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/load-balancer-target-group)
 module.
 
-See the [examples folder](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples) for fully 
+See the [examples folder](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples) for fully 
 working sample code.
 
 
@@ -28,7 +28,7 @@ code by adding a `module` configuration and setting its `source` parameter to UR
 
 ```hcl
 module "load_balancer" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
   source = "github.com/gruntwork/terraform-aws-couchbase//modules/load-balancer?ref=<VERSION>"
   
   name       = "couchbase-load-balancer"
