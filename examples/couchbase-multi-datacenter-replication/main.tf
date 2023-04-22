@@ -27,7 +27,7 @@ provider "aws" {
 module "couchbase_primary" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-cluster?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-cluster?ref=v0.0.1"
   source = "../../modules/couchbase-cluster"
 
   cluster_name  = var.cluster_name_primary
@@ -67,7 +67,7 @@ module "couchbase_primary" {
 module "couchbase_replica" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-cluster?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-cluster?ref=v0.0.1"
   source = "../../modules/couchbase-cluster"
 
   cluster_name  = var.cluster_name_replica
@@ -139,7 +139,7 @@ data "template_file" "user_data_replica" {
 module "load_balancer_primary" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer?ref=v0.0.1"
   source = "../../modules/load-balancer"
 
   name       = var.cluster_name_primary
@@ -163,7 +163,7 @@ module "load_balancer_primary" {
 module "couchbase_target_group_primary" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer-target-group?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer-target-group?ref=v0.0.1"
   source = "../../modules/load-balancer-target-group"
 
   target_group_name = "${var.cluster_name_primary}-cb"
@@ -194,7 +194,7 @@ module "couchbase_target_group_primary" {
 module "load_balancer_replica" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer?ref=v0.0.1"
   source = "../../modules/load-balancer"
 
   name       = var.cluster_name_replica
@@ -218,7 +218,7 @@ module "load_balancer_replica" {
 module "couchbase_target_group_replica" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer-target-group?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/load-balancer-target-group?ref=v0.0.1"
   source = "../../modules/load-balancer-target-group"
 
   target_group_name = "${var.cluster_name_replica}-cb"
@@ -248,7 +248,7 @@ module "couchbase_target_group_replica" {
 module "couchbase_security_group_rules_primary" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
   source = "../../modules/couchbase-server-security-group-rules"
 
   security_group_id = module.couchbase_primary.security_group_id
@@ -275,7 +275,7 @@ module "couchbase_security_group_rules_primary" {
 module "couchbase_security_group_rules_replica" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
   source = "../../modules/couchbase-server-security-group-rules"
 
   security_group_id = module.couchbase_replica.security_group_id
@@ -302,7 +302,7 @@ module "couchbase_security_group_rules_replica" {
 module "iam_policies_primary" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
   source = "../../modules/couchbase-iam-policies"
 
   iam_role_id = module.couchbase_primary.iam_role_id
@@ -320,7 +320,7 @@ module "iam_policies_primary" {
 module "iam_policies_replica" {
   # When using these modules in your own code, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
+  # source = "git::git@github.com:tnn-gruntwork-io/terraform-aws-couchbase.git//modules/couchbase-server-security-group-rules?ref=v0.0.1"
   source = "../../modules/couchbase-iam-policies"
 
   iam_role_id = module.couchbase_replica.iam_role_id

@@ -3,7 +3,7 @@
 This folder contains a script for installing Couchbase server and its dependencies. Use this script to create a
 Couchbase [Amazon Machine Image (AMI)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) that can be
 deployed in [AWS](https://aws.amazon.com/) across an Auto Scaling Group using the [couchbase-cluster
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-cluster).
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-cluster).
 
 This script has been tested on the following operating systems:
 
@@ -16,29 +16,29 @@ There is a good chance it will work on other flavors of Debian, CentOS, and RHEL
 
 ## Quick start
 
-This module depends on [bash-commons](https://github.com/gruntwork-io/bash-commons), so you must install that project
+This module depends on [bash-commons](https://github.com/tnn-gruntwork-io/bash-commons), so you must install that project
 first as documented in its README.
 
 To install Couchbase, use `git` to clone this repository at a specific tag (see the [releases 
-page](https://github.com/gruntwork-io/terraform-aws-couchbase/releases) for all available tags) and run the 
+page](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases) for all available tags) and run the 
 `install-couchbase-server` script:
 
 ```
-git clone --branch <VERSION> https://github.com/gruntwork-io/terraform-aws-couchbase.git
+git clone --branch <VERSION> https://github.com/tnn-gruntwork-io/terraform-aws-couchbase.git
 terraform-aws-couchbase/modules/install-couchbase-server/install-couchbase-server
 ```
 
 The `install-couchbase-server` script will install Couchbase, its dependencies, and the [run-couchbase-server 
-script](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-couchbase-server).
+script](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-couchbase-server).
 You can execute the `run-couchbase-server` script when the server is booting to start Couchbase and configure it to 
 automatically join other nodes to form a cluster.
 
 We recommend running the `install-couchbase-server` script as part of a [Packer](https://www.packer.io/) template to 
 create a Couchbase [Amazon Machine Image (AMI)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) (see the 
-[couchbase-ami example](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples/couchbase-ami) for 
+[couchbase-ami example](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples/couchbase-ami) for 
 fully-working sample code). You can then deploy the AMI across an Auto Scaling Group using the [couchbase-cluster 
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-cluster) (see the 
-[examples folder](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/examples) for fully-working 
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/couchbase-cluster) (see the 
+[examples folder](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/examples) for fully-working 
 sample code).
 
 
@@ -84,7 +84,7 @@ Install the following:
 * `Couchbase`: Install Couchbase using the appropriate [Linux 
   installer](https://developer.couchbase.com/documentation/server/5.1/install/install-linux.html). 
 * `run-couchbase-server`: Copy the [run-couchbase-server 
-  script](https://github.com/gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-couchbase-server) into 
+  script](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/tree/main/modules/run-couchbase-server) into 
   `/opt/couchbase/bin`. 
 
 

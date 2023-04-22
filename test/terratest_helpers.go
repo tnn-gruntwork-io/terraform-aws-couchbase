@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/aws"
-	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/packer"
+	"github.com/tnn-gruntwork-io/terratest/modules/aws"
+	"github.com/tnn-gruntwork-io/terratest/modules/logger"
+	"github.com/tnn-gruntwork-io/terratest/modules/packer"
 )
 
 // The username and password we use in all the examples, mocks, and tests

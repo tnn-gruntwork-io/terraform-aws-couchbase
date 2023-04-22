@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/aws"
-	"github.com/gruntwork-io/terratest/modules/random"
-	"github.com/gruntwork-io/terratest/modules/terraform"
-	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
+	"github.com/tnn-gruntwork-io/terratest/modules/aws"
+	"github.com/tnn-gruntwork-io/terratest/modules/random"
+	"github.com/tnn-gruntwork-io/terratest/modules/terraform"
+	test_structure "github.com/tnn-gruntwork-io/terratest/modules/test-structure"
 )
 
 // This domain name is registered in the Gruntwork Phx DevOps account. It also has ACM certs in all regions.

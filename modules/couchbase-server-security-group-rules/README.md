@@ -12,12 +12,12 @@ Couchbase uses a large number of ports, and this module allows you to configure 
 ## Quick start
 
 Let's say you want to deploy Couchbase using the [couchbase-cluster 
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/blob/main/modules/couchbase-cluster): 
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/blob/main/modules/couchbase-cluster): 
 
 ```hcl
 module "couchbase_cluster" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
-  source = "github.com/gruntwork-io/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
+  source = "github.com/tnn-gruntwork-io/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
 
   # ... (other params omitted) ...
 }
@@ -27,8 +27,8 @@ You can attach the Security Group rules to this cluster as follows:
 
 ```hcl
 module "security_group_rules" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
-  source = "github.com/gruntwork-io/terraform-aws-couchbase//modules/couchbase-server-security-group-rules?ref=<VERSION>"
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
+  source = "github.com/tnn-gruntwork-io/terraform-aws-couchbase//modules/couchbase-server-security-group-rules?ref=<VERSION>"
 
   security_group_id = module.couchbase_cluster.security_group_id
   
@@ -59,5 +59,5 @@ Note the following parameters:
   
 You can find the other parameters in [variables.tf](variables.tf).
 
-Check out the [examples folder](https://github.com/gruntwork-io/terraform-aws-couchbase/blob/main/examples) for 
+Check out the [examples folder](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/blob/main/examples) for 
 working sample code.

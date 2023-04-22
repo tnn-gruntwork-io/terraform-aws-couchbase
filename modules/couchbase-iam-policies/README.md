@@ -11,12 +11,12 @@ These policies are defined in a separate module so that you can add them to any 
 ## Quick start
 
 Let's say you want to deploy Couchbase using the [couchbase-cluster 
-module](https://github.com/gruntwork-io/terraform-aws-couchbase/blob/main/modules/couchbase-cluster): 
+module](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/blob/main/modules/couchbase-cluster): 
 
 ```hcl
 module "couchbase" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
-  source = "github.com/gruntwork-io/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
+  source = "github.com/tnn-gruntwork-io/terraform-aws-couchbase//modules/couchbase-cluster?ref=<VERSION>"
 
   # ... (other params omitted) ...
 }
@@ -26,8 +26,8 @@ You can attach the IAM policies to this cluster as follows:
 
 ```hcl
 module "couchbase_iam_policies" {
-  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/gruntwork-io/terraform-aws-couchbase/releases
-  source = "github.com/gruntwork-io/terraform-aws-couchbase//modules/couchbase-iam-policies?ref=<VERSION>"
+  # TODO: replace <VERSION> with the latest version from the releases page: https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/releases
+  source = "github.com/tnn-gruntwork-io/terraform-aws-couchbase//modules/couchbase-iam-policies?ref=<VERSION>"
 
   iam_role_id = module.couchbase.iam_role_id
 }
@@ -47,5 +47,5 @@ Note the following parameters:
   
 You can find the other parameters in [variables.tf](variables.tf).
 
-Check out the [examples folder](https://github.com/gruntwork-io/terraform-aws-couchbase/blob/main/examples) for 
+Check out the [examples folder](https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/blob/main/examples) for 
 working sample code.

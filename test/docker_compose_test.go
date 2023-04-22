@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/docker"
-	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/random"
-	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
+	"github.com/tnn-gruntwork-io/terratest/modules/docker"
+	"github.com/tnn-gruntwork-io/terratest/modules/logger"
+	"github.com/tnn-gruntwork-io/terratest/modules/random"
+	test_structure "github.com/tnn-gruntwork-io/terratest/modules/test-structure"
 )
 
 func TestUnitCouchbaseInDocker(t *testing.T) {
@@ -66,7 +66,7 @@ func TestUnitCouchbaseInDocker(t *testing.T) {
 
 func skipInCircleCi(t *testing.T) {
 	if os.Getenv("CIRCLECI") != "" {
-		t.Skip("Skipping Docker unit tests in CircleCI, as for some crazy reason, Couchbase often fails to start in a Docker container when running in CircleCI. See https://github.com/gruntwork-io/terraform-aws-couchbase/pull/10 for details.")
+		t.Skip("Skipping Docker unit tests in CircleCI, as for some crazy reason, Couchbase often fails to start in a Docker container when running in CircleCI. See https://github.com/tnn-gruntwork-io/terraform-aws-couchbase/pull/10 for details.")
 	}
 }
 

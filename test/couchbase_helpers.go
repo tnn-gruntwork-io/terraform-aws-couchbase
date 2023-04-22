@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/aws"
-	http_helper "github.com/gruntwork-io/terratest/modules/http-helper"
-	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/random"
-	"github.com/gruntwork-io/terratest/modules/retry"
-	"github.com/gruntwork-io/terratest/modules/terraform"
+	"github.com/tnn-gruntwork-io/terratest/modules/aws"
+	http_helper "github.com/tnn-gruntwork-io/terratest/modules/http-helper"
+	"github.com/tnn-gruntwork-io/terratest/modules/logger"
+	"github.com/tnn-gruntwork-io/terratest/modules/random"
+	"github.com/tnn-gruntwork-io/terratest/modules/retry"
+	"github.com/tnn-gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
 )
 
